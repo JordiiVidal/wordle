@@ -7,7 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class BoardComponent implements OnInit {
   @Input() word: string = '';
-  attempts: number = 5;
+  totalAttempts: number = 5;
+  attempts: string[] = [];
   constructor() { }
 
   ngOnInit(): void {
