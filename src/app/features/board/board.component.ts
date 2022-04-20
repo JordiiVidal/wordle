@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Board } from 'src/app/modules/home/models/board.model';
 
 @Component({
   selector: 'app-board',
@@ -7,11 +8,13 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class BoardComponent implements OnInit {
   @Input() word: string = '';
-  totalAttempts: number = 5;
-  attempts: string[] = [];
-  constructor() { }
+  board: Board;
+  constructor() {
+    this.board = new Board(this.word);
+  }
 
   ngOnInit(): void {
+    
   }
 
 }

@@ -2,8 +2,8 @@
     <h1>{{word}}</h1>
 </div>
 <div class="board">
-    <div class="board-row" *ngFor="let attempt of totalAttempts | loopNumber">
-        <div class="board-cell" *ngFor="let letter of word | loopWord;">
+    <div class="board-row" *ngFor="let attempt of board.totalAttempts| loopNumber">
+        <div class="board-cell" *ngFor="let letter of board.word| loopWord;">
             <span>{{letter}}</span>
         </div>
     </div>
