@@ -3,12 +3,15 @@
 </div>
 <div class="board">
     <div class="board-row" *ngFor="let attempt of board.totalAttempts| loopNumber">
-        <div class="board-cell" *ngFor="let letter of board.word| loopWord;">
-            <span>{{letter}}</span>
+        <div class="board-cell" *ngFor="let letter of board.word| loopWord;let i = index">
+            <span>{{board.attempts[attempt] ? board.attempts[attempt].letters[i] : '?'}}</span>
         </div>
     </div>
 </div>
 <div>
-    <input name="word_attempt" type="text">
-    <button>Send</button>
+    <input #intent name="intent" type="text">
+    <button (click)="clickSend(intent.value)">Send</button>
+</div>
+<div>
+    <h1>{{board.status.toString()}}</h1>
 </div>

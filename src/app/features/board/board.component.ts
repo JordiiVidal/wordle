@@ -14,7 +14,11 @@ export class BoardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
+    this.board = new Board(this.word);
+  }
+
+  clickSend(intent: string) {
+    this.board.addAttempt(intent);
   }
 
 }
