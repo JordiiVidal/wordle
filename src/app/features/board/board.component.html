@@ -1,6 +1,3 @@
-<div>
-    <h1>{{word}}</h1>
-</div>
 <div class="board">
     <div class="board-row" *ngFor="let attempt of board.totalAttempts| loopNumber">
         <div class="board-cell" *ngFor="let letter of board.word| loopWord;let i = index">
@@ -8,10 +5,7 @@
         </div>
     </div>
 </div>
-<div>
-    <input #intent name="intent" type="text">
-    <button (click)="clickSend(intent.value)">Send</button>
-</div>
+
 <div>
     <h1>{{board.status.toString()}}</h1>
 </div>

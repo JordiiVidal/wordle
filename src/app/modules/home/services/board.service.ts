@@ -5,12 +5,10 @@ import { Board } from '../models/board.model';
   providedIn: 'root'
 })
 export class BoardService {
-  board: Board;
-  constructor() {
-    this.board = new Board('');
-  }
+  boardActive: Board = new Board();
+  constructor() { }
 
-  setBoard(word: string) {
-    this.board = new Board(word);
+  setWord(word: string) {
+    this.boardActive.setWord(word);
   }
 }

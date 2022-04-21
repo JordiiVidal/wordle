@@ -1,1 +1,9 @@
+<div>
+    <h1>Animal</h1>
+</div>
 <app-board word="Animal"></app-board>
+<div>
+    <input #intent [ngClass]="{'error' : errorInput}" (keyup)="checkError(intent.value)" name="intent" type="text">
+    <button type="submit" (click)="clickSend(intent.value)" [disabled]="errorInput">Send</button>
+    <button (click)="clickRestart()">Restart</button>
+</div>

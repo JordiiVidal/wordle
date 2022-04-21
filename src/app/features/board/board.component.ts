@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Board } from 'src/app/modules/home/models/board.model';
+import { BoardService } from 'src/app/modules/home/services/board.service';
 
 @Component({
   selector: 'app-board',
@@ -7,18 +8,13 @@ import { Board } from 'src/app/modules/home/models/board.model';
   styleUrls: ['./board.component.css']
 })
 export class BoardComponent implements OnInit {
-  @Input() word: string = '';
   board: Board;
-  constructor() {
-    this.board = new Board(this.word);
+  constructor(private boardService: BoardService) {
+    this.board = this.boardService.boardActive;
   }
 
   ngOnInit(): void {
-    this.board = new Board(this.word);
-  }
 
-  clickSend(intent: string) {
-    this.board.addAttempt(intent);
   }
 
 }
